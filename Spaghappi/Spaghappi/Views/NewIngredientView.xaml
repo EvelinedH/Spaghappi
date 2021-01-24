@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spaghappi.Views.NewIngredientView"
+             Title="{Binding PageTitle}">
+    <Grid >
+        <Image x:Name="image" Aspect="AspectFill"/>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+            <StackLayout>
+                <Label Text="{Binding bc}"  TextColor="Black" FontSize="26" FontAttributes="Bold" />
+                <Label Text=" is een nieuwe barcode" TextColor="Black" FontSize="26" FontAttributes="Bold"/>
+                <Label Text="Vul de naam van dit product in." TextColor="Black" FontSize="26" FontAttributes="Bold"/>
+                <Entry Text="{Binding productName}" Placeholder="Naam van het product" TextColor="Black" FontSize="26" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="OK" Command="{Binding OkCommand}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

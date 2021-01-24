@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spaghappi.Views.DeleteIngredientView"
+             Title="{Binding PageTitle}">
+    <Grid VerticalOptions="Center">
+        <Image x:Name="image" Aspect="AspectFill"/>
+        <StackLayout Padding="20, 50, 20, 20" Spacing="30">
+            <Label Text="Tik op ingrediënt om te verwijderen uit voorraad" TextColor="Black" FontSize="26" FontAttributes="Bold"/>
+            <ListView ItemsSource="{Binding IngredientList}" 
+                      SelectedItem="{Binding SelectedIngredient}"
+                      ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="25, 5, 0, 0" BorderColor="Black" BackgroundColor="LightPink">
+                                <StackLayout Orientation="Horizontal" Spacing="20">
+                                    <Label Text="{Binding Quantity}" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                                    <Label Text="{Binding ProductName}" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Klaar" Command="{Binding FinishedCommand}"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

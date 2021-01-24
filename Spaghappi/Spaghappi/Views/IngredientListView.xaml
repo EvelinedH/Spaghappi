@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spaghappi.Views.IngredientListView"
+             Title="{Binding PageTitle}">
+    <Grid VerticalOptions="Center">
+        <Image x:Name="image" Aspect="AspectFill"/>
+        <StackLayout Padding="20">
+            <ListView ItemsSource="{Binding IngredientList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="Black" BackgroundColor="LightPink"  Padding="25, 5, 0, 0">
+                                <StackLayout Orientation="Horizontal" Spacing="20">
+                                    <Label Text="{Binding Quantity}" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                                    <Label Text="{Binding ProductName}" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Terug" Command="{Binding EndCommand}"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

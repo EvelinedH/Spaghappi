@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spaghappi.Views.AddIngredientView"
+             Title="{Binding PageTitle}">
+    <Grid >
+        <Image x:Name="image" Aspect="AspectFill"/>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                 <StackLayout>
+                    <Label Text="{Binding i.ProductName , StringFormat='{0} gescand'}" TextColor="Black" FontSize="26" FontAttributes="Bold" />
+                    <Label Text="{Binding i.Quantity, StringFormat='Er zijn {0} stuks in voorraad.'}" TextColor="Black" FontSize="26" FontAttributes="Bold"/>
+                    <Label Text="Wil je van dit gescande product nog eentje toevoegen?" TextColor="Black" FontSize="26" FontAttributes="Bold"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Button Text="Nee" Command="{Binding NoCommand}"/>
+                        <Button Text="Ja" Command="{Binding YesCommand}"/>
+                    </StackLayout>
+                </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>
